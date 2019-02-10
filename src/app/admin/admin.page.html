@@ -1,0 +1,51 @@
+<ion-header>
+  <ion-toolbar>
+    <ion-buttons slot="start">
+      <ion-menu-button></ion-menu-button>
+    </ion-buttons>
+    <ion-title>
+      Panel Admin
+    </ion-title>
+  </ion-toolbar>
+</ion-header>
+
+<ion-content padding>
+
+  <ion-card>
+    <ion-card-header>
+      <ion-card-title>Joueurs</ion-card-title>
+    </ion-card-header>
+    <ion-card-content>
+      <ion-list>
+
+        <ion-item *ngFor="let user of registeredPlayers; let i = index">
+          <ion-label>{{user?.pseudo}}</ion-label>
+          <ion-label *ngIf="user?.team?.teamName != undefined">Equipe actuelle : {{user?.team?.teamName}}</ion-label>
+          <ion-label *ngIf="user?.team?.teamName == undefined">Equipe actuelle : Aucune</ion-label>
+          <ion-item slot="end">
+            <ion-label>Changer équipe :</ion-label>
+            <ion-select placeholder="Select One" (ionChange)="changeTeam(user._id, $event)">
+              <ion-select-option *ngFor="let team of teams" value="{{team._id}}">{{team.teamName}}</ion-select-option>
+            </ion-select>
+          </ion-item>
+        </ion-item>
+
+      </ion-list>
+    </ion-card-content>
+  </ion-card>
+
+  <ion-card>
+    <ion-card-header>
+      <ion-card-title>Equipes</ion-card-title>
+    </ion-card-header>
+    <ion-card-content>
+      <ion-list>
+        <ion-item *ngFor="let team of teams">
+          <ion-label>{{team.teamName}}</ion-label>
+          <ion-button color="primary" slot="end" routerLink="/see-team/{{team._id}}">See Team</ion-button>
+        </ion-item>
+      </ion-list>
+    </ion-card-content>
+  </ion-card>
+
+</ion-content>

@@ -1,0 +1,23 @@
+<ion-header>
+  <ion-toolbar>
+    <ion-title>Team Details: {{team?.teamName}}</ion-title>
+  </ion-toolbar>
+</ion-header>
+
+<ion-content padding>
+
+  <ion-card>
+    <ion-card-content *ngIf="team?.players.length > 0">
+      <ion-item *ngFor="let player of team?.players">
+        <ion-label>{{player?.pseudo}}</ion-label>
+      </ion-item>
+    </ion-card-content>
+
+    <ion-card-content *ngIf="team?.players.length == 0">
+      <ion-item>
+        <ion-label>Que dalle</ion-label>
+      </ion-item>
+    </ion-card-content>
+  </ion-card>
+
+</ion-content>

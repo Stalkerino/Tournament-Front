@@ -1,0 +1,7 @@
+{
+  "name": "toornament",
+  "integrations": {
+    "cordova": {}
+  },
+  "type": "angular"
+}

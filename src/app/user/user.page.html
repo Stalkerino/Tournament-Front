@@ -1,0 +1,49 @@
+<ion-header>
+  <ion-toolbar>
+    <ion-buttons slot="start">
+      <ion-menu-button></ion-menu-button>
+    </ion-buttons>
+    <ion-title>
+      Mon compte
+    </ion-title>
+  </ion-toolbar>
+</ion-header>
+
+<ion-content padding>
+
+  <ion-card>
+    <ion-card-header>
+      <ion-card-title>{{userInfo?.pseudo}}</ion-card-title>
+    </ion-card-header>
+
+    <ion-card-content>
+      <ion-list>
+        <ion-item>
+          <ion-label position="stacked">Email</ion-label>
+          <ion-input value="{{userInfo?.email}}"></ion-input>
+        </ion-item>
+        <ion-item>
+          <ion-label position="stacked">Rang</ion-label>
+          <ion-input value="{{userInfo?.rang}}"></ion-input>
+        </ion-item>
+        <ion-item>
+          <ion-label position="stacked">Steam Link</ion-label>
+          <ion-input value="{{userInfo?.steamlink}}"></ion-input>
+        </ion-item>
+        <ion-item>
+          <ion-label position="stacked">Age</ion-label>
+          <ion-input value="{{userInfo?.age}}"></ion-input>
+        </ion-item>
+        <ion-item>
+          <ion-label position="stacked">Prenom</ion-label>
+          <ion-input value="{{userInfo?.prenom}}"></ion-input>
+        </ion-item>
+        <ion-item>
+          <ion-label position="stacked">Nom</ion-label>
+          <ion-input value="{{userInfo?.nom}}"></ion-input>
+        </ion-item>
+      </ion-list>
+    </ion-card-content>
+  </ion-card>
+
+</ion-content>

@@ -1,0 +1,76 @@
+<ion-header>
+  <ion-toolbar>
+    <ion-buttons slot="start">
+      <ion-menu-button></ion-menu-button>
+    </ion-buttons>
+    <ion-title>
+      Inscription
+    </ion-title>
+  </ion-toolbar>
+</ion-header>
+
+<ion-content padding>
+
+  <ion-card>
+    <ion-card-content>
+      <form [formGroup]="signupForm" (ngSubmit)="signup()">
+        <ion-item>
+          <ion-label position="stacked">Email :</ion-label>
+          <ion-input formControlName="email"></ion-input>
+        </ion-item>
+        <ion-item>
+          <ion-label position="stacked">Password :</ion-label>
+          <ion-input type="password" formControlName="password"></ion-input>
+        </ion-item>
+        <ion-item>
+          <ion-label position="stacked">Password (repete stp frer) :</ion-label>
+          <ion-input type="password" formControlName="password_repeat"></ion-input>
+        </ion-item>
+        <ion-item>
+          <ion-label position="stacked">Nom :</ion-label>
+          <ion-input formControlName="nom"></ion-input>
+        </ion-item>
+        <ion-item>
+          <ion-label position="stacked">Prénom :</ion-label>
+          <ion-input formControlName="prenom"></ion-input>
+        </ion-item>
+        <ion-item>
+          <ion-label position="stacked">Age :</ion-label>
+          <ion-input type="number" formControlName="age"></ion-input>
+        </ion-item>
+        <ion-item>
+          <ion-label position="stacked">Pseudo : </ion-label>
+          <ion-input formControlName="pseudo"></ion-input>
+        </ion-item>
+        <ion-item>
+          <ion-label position="stacked">Rang : </ion-label>
+          <ion-select value="brown" okText="Okay" cancelText="Dismiss" formControlName="rang">
+            <ion-select-option value="1">Silver 1</ion-select-option>
+            <ion-select-option value="2">Silver 2</ion-select-option>
+            <ion-select-option value="3">Silver 3</ion-select-option>
+            <ion-select-option value="4">Silver 4</ion-select-option>
+            <ion-select-option value="5">Silver Elite</ion-select-option>
+            <ion-select-option value="6">Nova 1</ion-select-option>
+            <ion-select-option value="7">Nova 2</ion-select-option>
+            <ion-select-option value="8">Nova 3</ion-select-option>
+            <ion-select-option value="9">Nova Master</ion-select-option>
+            <ion-select-option value="10">AK 1</ion-select-option>
+            <ion-select-option value="11">AK 2</ion-select-option>
+            <ion-select-option value="12">AK Elite</ion-select-option>
+            <ion-select-option value="13">DMG</ion-select-option>
+            <ion-select-option value="14">Eagle</ion-select-option>
+            <ion-select-option value="15">Eagle Master</ion-select-option>
+            <ion-select-option value="16">Suprem</ion-select-option>
+            <ion-select-option value="17">GLOUBOUL</ion-select-option>
+          </ion-select>
+        </ion-item>
+        <ion-item>
+          <ion-label position="stacked">SteamProfile URL :</ion-label>
+          <ion-input formControlName="steamlink"></ion-input>
+        </ion-item>
+        <ion-button color="primary" type="submit">M'inscrire</ion-button>
+      </form>
+    </ion-card-content>
+  </ion-card>
+
+</ion-content>

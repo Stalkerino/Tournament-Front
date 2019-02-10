@@ -1,0 +1,31 @@
+<ion-header>
+  <ion-toolbar>
+    <ion-buttons slot="start">
+      <ion-menu-button></ion-menu-button>
+    </ion-buttons>
+    <ion-title>
+      Home
+    </ion-title>
+  </ion-toolbar>
+</ion-header>
+
+<ion-content>
+    <ion-card class="welcome-card">
+      <ion-img src="/assets/noomy.jpg"></ion-img>
+      <ion-card-header>
+        <ion-card-subtitle>Bienvenue</ion-card-subtitle>
+        <ion-card-title>Tournoi NoomyStream #1 !</ion-card-title>
+      </ion-card-header>
+      <ion-card-content>
+        <p>Afin d'accéder au reste de l'application, vous devez vous inscrire et / ou vous connecter !</p>
+      </ion-card-content>
+    </ion-card>
+    <ion-card>
+      <ion-card-content>
+        <ion-button color="primary" expand="full" size="large" routerLink="/signup">Inscription</ion-button>
+        <ion-button color="secondary" expand="full" size="large" routerLink="/signin">Connexion</ion-button>
+        <ion-button color="secondary" expand="full" size="large" (click)="logout()">Logout</ion-button>
+        <ion-button color="danger" expand="full" size="large" routerLink="/admin">Administration</ion-button>
+      </ion-card-content>
+    </ion-card>
+</ion-content>
