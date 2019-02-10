@@ -13,17 +13,11 @@ export class AdminPage implements OnInit {
 
   public registeredPlayers: any;
   public teams: any;
+  public teamName: string;
 
   ngOnInit() {
     this.getRegisteredUsers();
-
-    this.http.do('get', '/getTeam/all')
-      .then((response) => {
-        this.teams = response.body;
-      })
-      .catch((err) => {
-        console.log(err);
-      });
+    this.getTeams();
   }
 
   public changeTeam(playerId, e) {
@@ -50,6 +44,30 @@ export class AdminPage implements OnInit {
     this.http.do('get', '/registered')
       .then((response) => {
         this.registeredPlayers = response.body;
+      })
+      .catch((err) => {
+        console.log(err);
+      });
+  }
+
+  private getTeams() {
+    this.http.do('get', '/getTeam/all')
+      .then((response) => {
+        this.teams = response.body;
+      })
+      .catch((err) => {
+        console.log(err);
+      });
+  }
+
+  public addTeam() {
+    this.http.do('post', '/team', {teamName: this.teamName, players: []})
+      .then((response) => {
+        if (response.status == 201) {
+          this.presentToast('Team added');
+          this.getTeams();
+          this.teamName = '';
+        }
       })
       .catch((err) => {
         console.log(err);

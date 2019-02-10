@@ -37,6 +37,17 @@
   <ion-card>
     <ion-card-header>
       <ion-card-title>Equipes</ion-card-title>
+      <ion-card>
+        <ion-card-content>
+          <ion-item>
+            <ion-label position="stacked">Nom de l'équipe :</ion-label>
+            <ion-input [(ngModel)]="teamName"></ion-input>
+          </ion-item>
+          <ion-item>
+            <ion-button color="primary" (click)="addTeam()">Ajouter équipe</ion-button>
+          </ion-item>
+        </ion-card-content>
+      </ion-card>
     </ion-card-header>
     <ion-card-content>
       <ion-list>
