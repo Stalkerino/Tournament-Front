@@ -78,6 +78,7 @@ export class AdminPage implements OnInit {
   public deleteUser(id: string) {
     this.http.do('get', '/removeUser/' + id)
       .then((response) => {
+        this.getRegisteredUsers();
         console.log(response);
       })
       .catch((err) => {
