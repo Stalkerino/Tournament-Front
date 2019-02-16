@@ -19,6 +19,7 @@
       <ion-list>
 
         <ion-item *ngFor="let user of registeredPlayers; let i = index">
+          <ion-button (click)="deleteUser(user._id)">Delete</ion-button>
           <ion-label>{{user?.pseudo}}</ion-label>
           <ion-label *ngIf="user?.team?.teamName != undefined">Equipe actuelle : {{user?.team?.teamName}}</ion-label>
           <ion-label *ngIf="user?.team?.teamName == undefined">Equipe actuelle : Aucune</ion-label>

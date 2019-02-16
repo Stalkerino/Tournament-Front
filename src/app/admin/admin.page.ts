@@ -21,6 +21,7 @@ export class AdminPage implements OnInit {
   }
 
   public changeTeam(playerId, e) {
+    console.log(playerId);
     this.http.do('post', '/assign', {playerId: playerId, teamId: e.detail.value})
       .then((response) => {
         this.getRegisteredUsers();
@@ -68,6 +69,16 @@ export class AdminPage implements OnInit {
           this.getTeams();
           this.teamName = '';
         }
+      })
+      .catch((err) => {
+        console.log(err);
+      });
+  }
+
+  public deleteUser(id: string) {
+    this.http.do('get', '/removeUser/' + id)
+      .then((response) => {
+        console.log(response);
       })
       .catch((err) => {
         console.log(err);
